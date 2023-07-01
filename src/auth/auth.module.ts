@@ -15,12 +15,13 @@ import { JwtStrategy } from './strategies/jwt.stategy';
       useFactory: () => ({
         secret: process.env.AUTH_SECRET,
         signOptions: {
-          expiresIn: '60m',
+          expiresIn: 24 * 60 * 60,
         },
       }),
     }),
   ],
   providers: [UserService, AuthService, LocalStrategy, JwtStrategy],
   controllers: [AuthController],
+  exports: [JwtModule]
 })
 export class AuthModule {}
