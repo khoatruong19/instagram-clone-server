@@ -10,6 +10,7 @@ import {
     UpdateDateColumn,
   } from 'typeorm';
 import { Profile } from './Profile';
+import { Post } from './Post';
   
   @Entity()
   export class User {
@@ -32,6 +33,10 @@ import { Profile } from './Profile';
     @OneToOne(() => Profile)
     @JoinColumn()
     profile: Profile;
+
+    @OneToMany(() => Post, post => post.author)
+    @JoinColumn()
+    posts: Post[];
 
     @CreateDateColumn({name: "created_at"})
     createdAt: Date
