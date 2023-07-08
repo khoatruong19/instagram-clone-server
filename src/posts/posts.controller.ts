@@ -17,7 +17,7 @@ import { FilesInterceptor } from '@nestjs/platform-express';
 import { AuthGuardJwt } from 'src/common/guards/auth-guard.jwt';
 import { storageOptions } from 'src/config/storage.config';
 import { CreatePostDto } from './dto/create-post.dto';
-import { PostService } from './post.service';
+import { PostsService } from './posts.service';
 import { CurrentUser } from 'src/common/decorators/current-user.decorator';
 import { User } from 'src/typeorm';
 import { Response } from 'express';
@@ -25,8 +25,8 @@ import { join } from 'path';
 import { UpdatePostDto } from './dto/update-post.dto';
 
 @Controller('posts')
-export class PostController {
-  constructor(private readonly postsService: PostService) {}
+export class PostsController {
+  constructor(private readonly postsService: PostsService) {}
 
   @Get()
   getAll() {

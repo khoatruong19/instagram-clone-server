@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
-import { PostController } from "./post.controller";
+import { PostsController } from "./posts.controller";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Post, PostImage } from "src/typeorm";
-import { PostService } from "./post.service";
+import { PostsService } from "./posts.service";
 import {MulterModule} from "@nestjs/platform-express"
 
 @Module({
@@ -11,7 +11,7 @@ import {MulterModule} from "@nestjs/platform-express"
           dest: './upload',
         }),
       })],
-    controllers: [PostController],
-    providers: [PostService]
+    controllers: [PostsController],
+    providers: [PostsService]
 })
-export class PostModule{}
+export class PostsModule{}

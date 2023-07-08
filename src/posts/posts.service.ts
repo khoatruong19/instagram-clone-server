@@ -10,7 +10,7 @@ import { deleteUploadFile } from 'src/utils/files';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class PostService {
+export class PostsService {
   constructor(
     @InjectRepository(Post) private readonly postsRepository: Repository<Post>,
     @InjectRepository(PostImage)

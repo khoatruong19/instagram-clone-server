@@ -6,7 +6,8 @@ import { ConfigModule } from '@nestjs/config';
 import ormConfig from './config/orm.config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
-import { PostModule } from './post/post.module';
+import { PostsModule } from './posts/posts.module';
+import { StoriesController } from './stories/stories.controller';
 
 @Module({
   imports: [ ConfigModule.forRoot({
@@ -17,7 +18,7 @@ import { PostModule } from './post/post.module';
   }),
   TypeOrmModule.forRootAsync({
     useFactory: ormConfig
-  }), AuthModule, PostModule],
+  }), AuthModule, PostsModule, StoriesController],
   controllers: [AppController],
   providers: [AppService],
 })

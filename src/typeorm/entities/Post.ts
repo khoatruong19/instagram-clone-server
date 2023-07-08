@@ -23,7 +23,7 @@ export class Post{
 
     likesCount?: number
 
-    @OneToMany(() => PostImage, (like) => like.post,{
+    @OneToMany(() => PostImage, (image) => image.post,{
         eager: true,
         cascade: true
     })
