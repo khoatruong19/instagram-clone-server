@@ -9,6 +9,9 @@ export class PostImage{
     @Column()
     url: string
 
+    @Column()
+    filename: string
+
     @ManyToOne(() => Post, post => post.images)
     post: Post
 }
