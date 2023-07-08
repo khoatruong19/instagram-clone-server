@@ -101,10 +101,10 @@ export class PostService {
       await this.deletePostImages(existingPost.images);
     }
 
-    return await this.postsRepository.save({
-      ...existingPost,
-      images: newImages,
-    });
+    if(newImages.length > 0)
+    existingPost = { ...existingPost, images: newImages };
+
+    return await this.postsRepository.save(existingPost);
   }
 
   async deletePost(data: DeletePostData): Promise<string> {
