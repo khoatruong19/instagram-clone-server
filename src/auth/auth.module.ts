@@ -4,9 +4,9 @@ import { User } from 'src/typeorm';
 import { UserService } from './user.service';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { LocalStrategy } from './strategies/local.strategy';
+import { LocalStrategy } from '../common/strategies/local.strategy';
 import { JwtModule } from '@nestjs/jwt';
-import { JwtStrategy } from './strategies/jwt.stategy';
+import { JwtStrategy } from '../common/strategies/jwt.stategy';
 
 @Module({
   imports: [
