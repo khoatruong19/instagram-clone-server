@@ -8,9 +8,9 @@ export class Follower{
 
     @OneToOne(() => User)
     @JoinColumn({name: "follower_user_id"})
-    followerUserId: string
+    followerUser: User
 
     @OneToOne(() => User)
     @JoinColumn({name: "followed_user_id"})
-    followedUserId: string
+    followedUser: User
 }
