@@ -12,8 +12,6 @@ interface StorageValidation{
 export const storage = diskStorage({
     destination: "./upload",
     filename:(req, file, cb) => {
-        console.log([file])
-        
         const filename = path.parse(file.originalname).name.replace(/\s/g, '') + uuidv4()
         const extension = path.parse(file.originalname).ext
 
