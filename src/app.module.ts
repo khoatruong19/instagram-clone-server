@@ -11,7 +11,7 @@ import { FollowersModule } from './followers/followers.module';
 import { StoriesModule } from './stories/stories.module';
 
 @Module({
-  imports: [ ConfigModule.forRoot({
+  imports: [ConfigModule.forRoot({
     isGlobal: true,
     load: [ormConfig],
     expandVariables: true,
