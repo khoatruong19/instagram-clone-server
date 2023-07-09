@@ -11,6 +11,7 @@ import {
   } from 'typeorm';
 import { Profile } from './Profile';
 import { Post } from './Post';
+import { Story } from './Story';
   
   @Entity()
   export class User {
@@ -37,6 +38,10 @@ import { Post } from './Post';
     @OneToMany(() => Post, post => post.author)
     @JoinColumn()
     posts: Post[];
+
+    @OneToMany(() => Story, story => story.author)
+    @JoinColumn()
+    stories: Story[];
 
     @CreateDateColumn({name: "created_at"})
     createdAt: Date

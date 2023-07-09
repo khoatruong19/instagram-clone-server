@@ -5,6 +5,7 @@ import { Post } from './entities/Post';
 import { PostImage } from './entities/PostImage';
 import { PostLike } from './entities/PostLike';
 import { Profile } from './entities/Profile';
+import { Story } from './entities/Story';
 import { User } from './entities/User';
 
 const entities = [
@@ -16,6 +17,7 @@ const entities = [
   Comment,
   CommentLike,
   PostImage,
+  Story
 ];
 
 export default entities;
@@ -29,4 +31,5 @@ export {
   PostImage,
   Comment,
   CommentLike,
+  Story
 };
