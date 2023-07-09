@@ -66,7 +66,7 @@ export class StoriesService {
 
     followingIds.forEach((id) => {
       const storiesByUser = stories.filter((story) => story.author.id === id);
-      if (storiesByUser.length > 0) {
+      if (!_.isEmpty(storiesByUser)) {
         gatheredWithSameUserStories.push(
           this.formatStoriesByUser(storiesByUser),
         );
@@ -81,7 +81,7 @@ export class StoriesService {
     const followedUsersStories = await this.getStoriesOfFollowingUsers(
       currentUserId,
     );
-    
+
     return [myStories, ...followedUsersStories];
   }
 
