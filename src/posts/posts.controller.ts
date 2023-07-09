@@ -32,7 +32,6 @@ export class PostsController {
   getAll() {
     return this.postsService.getAllPosts();
   }
-
   
   @Get(":postid")
   getOne(@Param('postid', ParseIntPipe) postId) {
