@@ -77,15 +77,11 @@ export class StoriesService {
   }
 
   async getStories(currentUserId: number) {
-    // const [myStories, followingUserStories] = await Promise.all([
-    //   this.getMyStories(currentUserId),
-    //   this.getStoriesOfFollowingUsers(currentUserId),
-    // ]);
     const myStories = await this.getMyStories(currentUserId);
     const followedUsersStories = await this.getStoriesOfFollowingUsers(
       currentUserId,
     );
-    console.log({ myStories, followedUsersStories });
+    
     return [myStories, ...followedUsersStories];
   }
 
