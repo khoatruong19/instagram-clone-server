@@ -14,7 +14,7 @@ export class StoriesController {
 
   @Get()
   @UseGuards(AuthGuardJwt)
-  getStoriesOfFollowingUsers(@CurrentUser() user: User) {
+  getStories(@CurrentUser() user: User) {
     return this.storiesService.getStories(user.id);
   }
 
