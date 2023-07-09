@@ -4,7 +4,6 @@ import { FollowersService } from 'src/followers/followers.service';
 import { Story } from 'src/typeorm';
 import { In, Repository } from 'typeorm';
 import * as _ from 'lodash';
-import { CreateStoryData } from 'src/utils/types/story';
 
 @Injectable()
 export class StoriesService {
